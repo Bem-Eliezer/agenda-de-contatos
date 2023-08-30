@@ -42,7 +42,7 @@ function atualizaagenda() {
 	const corpoAgenda = document.querySelector('tbody');
 	corpoAgenda.innerHTML = linhas;
 }
-
+// ESSE COMANDO ESTAVA TENTANDO USAR, MAS NÃO ESTOU CONSEGUINDO FAZER COM QUE ELE CALCULE A QUANTIDADE DE CADASTRO FEITA
 function atualizacontatos() {
 	let totalcont = calculatotal();
 
