@@ -19,6 +19,7 @@ function adicionaLinha() {
 	//chamando variaveis HTML atraves do id
 	let inputNome = document.getElementById('nome');
 	let inputTelefone = document.getElementById('telefone');
+	
 	// condição SE contato for repetido mostrar um msg senão pode cadastrar novo contato 
 	if(contatos.includes(inputNome.value)) {
 		alert(`O contato: ${inputNome.value} já foi cadastrado`); 
@@ -26,7 +27,7 @@ function adicionaLinha() {
 		contatos.push(inputNome.value);
 		numero.push(parseInt(inputTelefone.value));
 
-		let linha = '<tr>';
+		let linha = '<tr class="contato-agenda">';
 			linha += `<td>${inputNome.value}</td>`;
 			linha += `<td>${inputTelefone.value}</td>`;
 			linha += `</tr>`
@@ -42,7 +43,7 @@ function atualizaagenda() {
 	const corpoAgenda = document.querySelector('tbody');
 	corpoAgenda.innerHTML = linhas;
 }
-// ESSE COMANDO ESTAVA TENTANDO USAR, MAS NÃO ESTOU CONSEGUINDO FAZER COM QUE ELE CALCULE A QUANTIDADE DE CADASTRO FEITA
+//função vai atualizar e calcular a quantidade de cadastros feitos e retornar o valor total
 function atualizacontatos() {
 	let totalcont = calculatotal();
 
@@ -50,12 +51,6 @@ function atualizacontatos() {
 }
 
 function calculatotal() {
-	let somacontato = 0;
-	
-	for (let i = 0; i < linha.length; i++) {
-		somacontato += linha[i];
-	}
-	
-	return somacontato + linha.length;
 
+	return document.querySelectorAll('.contato-agenda').length;
 }
